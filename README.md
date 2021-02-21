@@ -15,7 +15,7 @@ of Postgresql:
 You can check here to learn more about these kernel
 parameters. 
 
-- *SHMMAX*: SHMMAX is a kernel parameter 
+- SHMMAX: SHMMAX is a kernel parameter 
 used to define the maximum size of a single shared
 memory segment Linux process can allocate.
 
