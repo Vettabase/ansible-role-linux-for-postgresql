@@ -38,6 +38,14 @@ running in the userspace.
 - vm.overcommit_ratio: This parameter decides the
 percentage of RAM available for overloading.
 
+- vm.dirty_background_ratio: Percentage of memory
+filled with dirty pages that needs to be written to
+disk.  
+
+- vm.dirty_ratio: Similar to `vm.dirty_background_
+ratio but needs to contain higher value than the 
+preceding kernel parameter.
+
 ## How to Include the role in an audible playbook
 
 
