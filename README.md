@@ -27,6 +27,17 @@ pages.
 Linux to support pages greater than 4KB. Check
 here for more details.
 
+- vm.swappiness: Is another kernel parameter that
+is used to control the swapping pages to and from memory 
+. 
+
+- vm.overcommit_memory: This memory related parameter is
+used by the kernel to allocate memory to application 
+running in the userspace.
+
+- vm.overcommit_ratio: This parameter decides the
+percentage of RAM available for overloading.
+
 ## How to Include the role in an audible playbook
 
 
