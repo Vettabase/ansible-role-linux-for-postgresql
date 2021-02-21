@@ -46,12 +46,14 @@ disk.
 ratio but needs to contain higher value than the 
 preceding kernel parameter.
 
-## How to Include the role in an audible playbook
+## How to Include the role in an ansible playbook
 
+```
 --- 
 - hosts: all 
   roles: 
     -  optimize_linux 
+```
 
 
 Then execute the following command on the terminal
