@@ -18,6 +18,21 @@
     name: vm.swappiness
     value: 
     state: present 
+    
+- sysctl: 
+    name: vm.overcommit_memory
+    value:  
+    state:  
+    
+- sysctl:  
+    name: vm.overcommit_ratio
+    value:
+    state: 
+    
+- sysctl:  
+    name: vm.dirty_background_ratio  
+    value: 
+    state:  
 
 
 
