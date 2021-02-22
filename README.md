@@ -59,4 +59,6 @@ preceding kernel parameter.
 Then execute the following command on the terminal
 to run the playbook as shown below:
 
-`ansible-playbook linux-optimize.yaml`
+`ansible-playbook linux-optimize.yaml`  
+
+Developed By: [Vettabase](vettabase.com)
