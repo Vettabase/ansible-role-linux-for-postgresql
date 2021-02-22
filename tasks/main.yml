@@ -6,35 +6,38 @@
 
 - sysctl:  
     name: kernel.shmmax
-    value: 
+    value: 16777216 
     state: present 
 
 - sysctl: 
     name: kernel.shmmall 
-    value: 
+    value: 16777216
     state: present 
 
 - sysctl: 
     name: vm.swappiness
-    value: 
+    value: 1
     state: present 
     
 - sysctl: 
     name: vm.overcommit_memory
-    value:  
-    state:  
+    value: 2 
+    state: present 
     
 - sysctl:  
     name: vm.overcommit_ratio
-    value:
+    value: 
     state: 
     
 - sysctl:  
     name: vm.dirty_background_ratio  
-    value: 
-    state:  
+    value: 10
+    state: present 
 
-
+- sysctl:   
+    name: vm.dirty_ratio
+    value: 20 
+    state: present
 
 - name: Install Postgresql  
   command: apt install postgresql postgresql-contrib libpq-dev python-psycopg2
