@@ -19,6 +19,11 @@
     value: 1
     state: present 
     
+- sysctl:  
+    name: vm.nr_hugepages
+    value: 88
+    state: present
+    
 - sysctl: 
     name: vm.overcommit_memory
     value: 2 
