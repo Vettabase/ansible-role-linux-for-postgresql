@@ -1,1 +1,12 @@
-
+galaxy_info:   
+  author: Michael Aboagye 
+  company: Vettabase Ltd 
+  description: This role optimizes some linux parameters before installing postgresql 
+  min_ansible_version: 2.9.15 
+  platforms:  
+  -  name: Ubuntu
+  categories: 
+  -  systems
+  -  development
+  
+dependencies: []
