@@ -61,4 +61,4 @@ to run the playbook as shown below:
 
 `ansible-playbook linux-optimize.yaml`  
 
-## Developed By: [Vettabase](vettabase.com)
+## Developed By: [Vettabase Ltd](vettabase.com)
