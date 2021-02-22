@@ -25,7 +25,7 @@ pages.
 
 - Huge Pages: Huge Pages makes it possible for 
 Linux to support pages greater than 4KB. Check
-here for more details.
+[here](https://help.ubuntu.com/community/KVM%20-%20Using%20Hugepages) for more details.
 
 - vm.swappiness: Is another kernel parameter that
 is used to control the swapping pages to and from memory 
