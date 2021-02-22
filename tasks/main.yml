@@ -26,8 +26,8 @@
     
 - sysctl:  
     name: vm.overcommit_ratio
-    value: 
-    state: 
+    value: 50%
+    state: present
     
 - sysctl:  
     name: vm.dirty_background_ratio  
