@@ -1,3 +1,8 @@
+
+- name: upgrade the OS
+  apt: 
+    upgrade: dist 
+
 - name: update cache
     apt: 
       update_cache: yes 
