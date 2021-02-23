@@ -49,8 +49,8 @@ preceding kernel parameter.
 ## Setting IP table rules for linux
 
 If you have forgotten about IP tables rules in Linux,
-check here in order to understand what the `Iptable_
-rule` does.  
+check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_
+rule` role does.  
 
 
 ## How to Include the role in an ansible playbook
