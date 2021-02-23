@@ -5,8 +5,7 @@ This role optimizes linux before moving on to install Postgresql latest version
 on Debian distribution.
 
 The role performs the following steps (in order) 
-to optimize Linux before installing latest version
-of Postgresql:
+to optimize Linux before installing Postgresql.
 
 - Upgrading Linux kernel 
 - Setting/Configuring specific linux kernel parameters
