@@ -46,7 +46,12 @@ disk.
 ratio but needs to contain higher value than the 
 preceding kernel parameter.
 
-## Setting IP 
+## Setting IP table rules for linux
+
+If you have forgotten about IP tables rules in Linux,
+check here in order to understand what the `Iptable_
+rule` does.  
+
 
 ## How to Include the role in an ansible playbook
 
