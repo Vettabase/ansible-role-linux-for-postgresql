@@ -46,6 +46,8 @@ disk.
 ratio but needs to contain higher value than the 
 preceding kernel parameter.
 
+## Setting IP 
+
 ## How to Include the role in an ansible playbook
 
 ```
