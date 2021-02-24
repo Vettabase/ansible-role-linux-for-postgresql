@@ -55,7 +55,10 @@ preceding kernel parameter.
 ### Iptable_rules Task
 
 If you have forgotten about IP tables rules in Linux,
-check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_rule` role does.
+check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_rule` role does.  
+
+Variable: `backup_ipaddress` - for allowing specific addresses to backup postgresql using `rsync` service
+Variable: `postgresconn_ipaddress` - specifies ip addresses allowed to connect to postgresql
 
 The `iptable_rules` task performs the following:
 
