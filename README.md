@@ -48,7 +48,14 @@ preceding kernel parameter.
 ## Setting IP table rules for linux
 
 If you have forgotten about IP tables rules in Linux,
-check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_rule` role does.  
+check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_rule` role does.
+
+## How the `iptable_rules` role works
+
+First it checks if iptables is already installed 
+or not via `package_facts` module. If it's not
+installed, then the role installs it via the 
+`apt` module. 
 
 
 ## How to Include the role in an ansible playbook
