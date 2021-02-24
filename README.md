@@ -66,7 +66,7 @@ or not via `package_facts` module. If it's not
 installed, then the role installs it via the 
 `apt` module. 
 
-- It only allows/accepts connections from port `22` tcp and `5432`.
+- It only allows/accepts packets  from port `22` tcp and `5432`.
  
 ## How to Include the role in an ansible playbook
 
