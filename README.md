@@ -1,5 +1,12 @@
 ## Optimizing Linux before installing Postgresql
 
+There are two main tasks for the optimize_linux
+role namely:
+
+- `kernel_linux` task
+- `iptables_rules` task
+
+### Kernel_linux Task
 
 The `kernel_linux` task optimizes linux before installing Postgresql  
 on Debian distribution.
@@ -45,7 +52,7 @@ disk.
 ratio but needs to contain higher value than the 
 preceding kernel parameter.
 
-## Setting IP table rules for linux
+### Iptable_rules Task
 
 If you have forgotten about IP tables rules in Linux,
 check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_rule` role does.
