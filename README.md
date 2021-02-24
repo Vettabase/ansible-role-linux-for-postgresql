@@ -1,7 +1,7 @@
 ## Optimizing Linux before installing Postgresql
 
 
-This role optimizes linux before moving on to install Postgresql latest version 
+The `kernel_linux` role optimizes linux before installing Postgresql  
 on Debian distribution.
 
 The role performs the following steps (in order) 
@@ -50,7 +50,7 @@ preceding kernel parameter.
 If you have forgotten about IP tables rules in Linux,
 check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_rule` role does.
 
-## How the `iptable_rules` role works
+## The `iptable_rules` role performs the following:
 
 First it checks if iptables is already installed 
 or not via `package_facts` module. If it's not
@@ -64,7 +64,7 @@ installed, then the role installs it via the
 --- 
 - hosts: all 
   roles: 
-    -  optimize_linux 
+    -  optimize_linux
 ```
 
 
