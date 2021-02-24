@@ -1,3 +1,23 @@
 - name: update system packages 
   apt:  
-    update_cache: yes 
+    update_cache: yes  
+    
+- name: install iptables-persistent 
+  ansible.builtin.command: apt install iptables-persistent   
+  
+- name: accepts all traffic on your loopback interface 
+  ansible.builtin.command: iptables -A INPUT -i lo -j ACCEPT
+  
+ - name: accepts all traffic on your loopback interface
+   ansible.builtin.command: iptables -A INPUT -o lo -j ACCEPT 
+   
+ - name: accepts established and related incoming connections 
+   ansible.builtin.command: iptables -A INPUT -m conntrack --cstate ESTABLISHED,RELATED -j ACCEPT 
+   
+ - name: accepts outgoing established connections  
+   ansible.builtin.command: iptables -A OUTPUT -m conntrack --cstate ESTABLISHED -j ACCEPT  
+   
+  
+   
+ 
+  
