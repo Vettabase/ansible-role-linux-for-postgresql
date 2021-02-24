@@ -59,7 +59,9 @@ check [here](https://linux.die.net/man/8/iptables) in order to understand what t
 
 The `iptable_rules` task performs the following:
 
-- First it checks if iptables is already installed 
+- Updates systems packages using the `apt` module
+
+-  Then it checks if iptables is already installed 
 or not via `package_facts` module. If it's not
 installed, then the role installs it via the 
 `apt` module. 
