@@ -75,7 +75,9 @@ installed, then the role installs it via the
 
 - It only allows/accepts packets from port 873 `22` tcp and `5432`. 
 
-- Services allowed `rsync`, `ssh`, `postgres` 
+- Services allowed `rsync`, `ssh`, `postgres`  
+
+- Then saves current iptables rules to a text file named `iptablerules.txt`
  
 ## How to Include the role in an ansible playbook
 
