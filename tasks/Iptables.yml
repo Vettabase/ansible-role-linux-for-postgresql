@@ -12,10 +12,19 @@
    ansible.builtin.command: iptables -A INPUT -o lo -j ACCEPT 
    
  - name: accepts established and related incoming connections 
-   ansible.builtin.command: iptables -A INPUT -m conntrack --cstate ESTABLISHED,RELATED -j ACCEPT 
+   ansible.builtin.command: iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
    
  - name: accepts outgoing established connections  
-   ansible.builtin.command: iptables -A OUTPUT -m conntrack --cstate ESTABLISHED -j ACCEPT  
+   ansible.builtin.command: iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT  
+   
+ - name: allow traffic from internal interface to external interface 
+   ansible.builtin.command: iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT 
+   
+ - name: drop invalid packets 
+   ansible.builtin.command: iptables -A INPUT -m conntrack --ctstate INVALID -j DROP   
+   
+ - name: accept incoming connections from port 22 
+   ansible.builtin.command: iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT  
    
   
    
