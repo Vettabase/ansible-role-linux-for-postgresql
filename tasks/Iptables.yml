@@ -26,6 +26,9 @@
  - name: accept incoming connections from port 22 
    ansible.builtin.command: iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT  
    
+ - name: allow otugoing established ssh connections 
+   ansible.builtin.command: iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT 
+   
   
    
  
