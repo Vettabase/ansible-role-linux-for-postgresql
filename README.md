@@ -77,7 +77,9 @@ installed, then the role installs it via the
 
 - Services allowed `rsync`, `ssh`, `postgres`  
 
-- Then saves current iptables rules to a text file named `iptablerules.txt`
+- Then saves current iptables rules to a text file named `iptablerules.txt`  
+
+You can delete the file `iptablerules.txt` after you have backup the file to a remote server.
  
 ## How to Include the role in an ansible playbook
 
@@ -92,6 +94,6 @@ installed, then the role installs it via the
 Then execute the following command on the terminal
 to run the playbook as shown below:
 
-`ansible-playbook linux-optimize.yaml`  
+`ansible-playbook linux-optimize.yaml --extra-vars "backup_ipaddress=<ip_address>" "postgresconn_ipaddress=<ip_address>" `  
 
 ## Developed By: [Vettabase Ltd](vettabase.com)
