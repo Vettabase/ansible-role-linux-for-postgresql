@@ -3,31 +3,33 @@
     update_cache: yes  
     
 - name: install iptables-persistent 
-  ansible.builtin.command: apt install iptables-persistent   
+  command: apt install iptables-persistent   
   
 - name: accepts all traffic on your loopback interface 
-  ansible.builtin.command: iptables -A INPUT -i lo -j ACCEPT
+  command: iptables -A INPUT -i lo -j ACCEPT
   
  - name: accepts all traffic on your loopback interface
-   ansible.builtin.command: iptables -A INPUT -o lo -j ACCEPT 
+   command: iptables -A INPUT -o lo -j ACCEPT 
    
  - name: accepts established and related incoming connections 
-   ansible.builtin.command: iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
+   command: iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
    
  - name: accepts outgoing established connections  
-   ansible.builtin.command: iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT  
+   command: iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT  
    
  - name: allow traffic from internal interface to external interface 
-   ansible.builtin.command: iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT 
+   command: iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT 
    
  - name: drop invalid packets 
-   ansible.builtin.command: iptables -A INPUT -m conntrack --ctstate INVALID -j DROP   
+   command: iptables -A INPUT -m conntrack --ctstate INVALID -j DROP   
    
  - name: accept incoming connections from port 22 
-   ansible.builtin.command: iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT  
+   command: iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT  
    
  - name: allow otugoing established ssh connections 
-   ansible.builtin.command: iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT 
+   command: iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT 
+   
+ - name: 
    
   
    
