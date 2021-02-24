@@ -40,7 +40,13 @@
    
  
  - name: allow outgoing established postgresql connections  
-   command: iptables -A OUTPUT -p tcp --sport 5432 -m conntrack ESTABLISHED -j ACCEPT
+   command: iptables -A OUTPUT -p tcp --sport 5432 -m conntrack ESTABLISHED -j ACCEPT 
+   
+ - name: allow postgres to specific network interface  
+   command: iptables -A INPUT -i eth1 -p tcp --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT 
+   
+ - name: allow outgoing traffic of established postgresql connection  
+   command: iptables -A OUTPUT -o eth1 -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT
    
  
   
