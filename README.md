@@ -1,4 +1,6 @@
-## Optimizing Linux before installing Postgresql
+## Optimizing Linux before installing Postgresql  
+
+![Postgresql](https://www.bing.com/images/blob?bcid=RKbKXw6n7m8CRA)
 
 There are two main tasks for the optimize_linux
 role namely:
