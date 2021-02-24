@@ -57,12 +57,14 @@ preceding kernel parameter.
 If you have forgotten about IP tables rules in Linux,
 check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_rule` role does.
 
-## The `iptable_rules` task performs the following:
+The `iptable_rules` task performs the following:
 
-First it checks if iptables is already installed 
+- First it checks if iptables is already installed 
 or not via `package_facts` module. If it's not
 installed, then the role installs it via the 
 `apt` module. 
+
+- 
 
 
 ## How to Include the role in an ansible playbook
