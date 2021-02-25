@@ -5,20 +5,19 @@
 There are two main tasks for the optimize_linux
 role namely:
 
-- `kernel_linux` task
-- `iptables_rules` task
+- `kernel-linux.yml` task
+- `iptables.yml` task
 
-### Kernel_linux Task
+### Kernel-linux Task
 
-The `kernel_linux` task optimizes linux before installing Postgresql  
+The `kernel-linux.yml` optimizes linux before installing Postgresql  
 on Debian distribution.
 
-The role performs the following steps (in order) 
+The task performs the following steps (in order) 
 to optimize Linux before installing Postgresql.
 
 - Upgrading Linux kernel 
 - Setting/Configuring specific linux kernel parameters
-- Installing the latest version of Postgresql
 
 You can check here to learn more about these kernel
 parameters. 
@@ -54,15 +53,15 @@ disk.
 ratio but needs to contain higher value than the 
 preceding kernel parameter.
 
-### Iptable_rules Task
+### iptable_rules Task
 
 If you have forgotten about IP tables rules in Linux,
-check [here](https://linux.die.net/man/8/iptables) in order to understand what the `Iptable_rule` role does.  
+check [here](https://linux.die.net/man/8/iptables) in order to understand what the task inside the `iptables.yml`  does.  
 
 Variable: `backup_ipaddress` - for allowing specific addresses to backup postgresql using `rsync` service
 Variable: `postgresconn_ipaddress` - specifies ip addresses allowed to connect to postgresql
 
-The `iptable_rules` task performs the following:
+The `iptables.yml` performs the following:
 
 - Updates systems packages using the `apt` module
 
@@ -79,7 +78,7 @@ installed, then the role installs it via the
 
 - Then saves current iptables rules to a text file named `iptablerules.txt`  
 
-You can delete the file `iptablerules.txt` after you have backup the file to a remote server.
+You can delete the file `iptablerules.txt` after you have copied the file to a remote server.
  
 ## How to Include the role in an ansible playbook
 
@@ -87,7 +86,7 @@ You can delete the file `iptablerules.txt` after you have backup the file to a r
 --- 
 - hosts: all 
   roles: 
-    -  optimize_linux
+    -  linux-for-postgresql
 ```
 
 
