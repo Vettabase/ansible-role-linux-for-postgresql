@@ -31,6 +31,7 @@
    
  - name: allow rsync connection from specific ip address 
    command: "iptables -A INPUT -p tcp -s {{ backup_ipaddress }} --dport 873 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT" 
+   when: backup_ipaddress is defined
    
  - name: allow otugoing traffic rysnc connections
    command: iptables -A OUTPUT -p tcp --sport 873 -m conntrack --ctstate ESTABLSIHED -j ACCEPT 
