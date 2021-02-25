@@ -93,6 +93,6 @@ You can delete the file `iptablerules.txt` after you have copied the file to a r
 Then execute the following command on the terminal
 to run the playbook as shown below:
 
-`ansible-playbook linux-optimize.yaml --extra-vars "backup_ipaddress=<ip_address>" "postgresconn_ipaddress=<ip_address>" `  
+`ansible-playbook linux-playbook.yaml --extra-vars "backup_ipaddress=<ip_address>" "postgresconn_ipaddress=<ip_address>" `  
 
 ## Developed By: [Vettabase Ltd](vettabase.com)
