@@ -58,7 +58,7 @@ preceding kernel parameter.
 If you have forgotten about IP tables rules in Linux,
 check [here](https://linux.die.net/man/8/iptables) in order to understand what the task inside the `iptables.yml`  does.  
 
-Variable: `backup_ipaddress` - for allowing specific addresses to backup postgresql using `rsync` service
+Variable: `backup_ipaddress` - for allowing specific ip address to backup postgresql using `rsync` service
 
 The `iptables.yml` performs the following:
 
