@@ -59,7 +59,6 @@ If you have forgotten about IP tables rules in Linux,
 check [here](https://linux.die.net/man/8/iptables) in order to understand what the task inside the `iptables.yml`  does.  
 
 Variable: `backup_ipaddress` - for allowing specific addresses to backup postgresql using `rsync` service
-Variable: `postgresconn_ipaddress` - specifies ip addresses allowed to connect to postgresql
 
 The `iptables.yml` performs the following:
 
@@ -72,7 +71,7 @@ installed, then the role installs it via the
 
 - Install `iptables-persistent` package to save iptable rules
 
-- It only allows/accepts packets from port 873 `22` tcp and `5432`. 
+- It only allows/accepts packets from port `873` `22` tcp and `5432`. 
 
 - Services allowed `rsync`, `ssh`, `postgres`  
 
