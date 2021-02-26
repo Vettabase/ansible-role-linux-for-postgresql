@@ -88,6 +88,7 @@ You can delete the file `iptablerules.txt` after you have copied the file to a r
     -  linux-for-postgresql
 ```
 
+## NB: You need to change the list of default `pg_ipaddress` values to your preferred list of ipaddresses.
 
 Then execute the following command on the terminal
 to run the playbook as shown below:
