@@ -93,10 +93,12 @@ You can delete the file `iptablerules.txt` after you have copied the file to a r
 Then execute the following command on the terminal
 to run the playbook as shown below:
 
-// You can run the role in a playbook by specifying an ipaddress for performing backups via the `backup_ipaddress` variable
+ You can run the role in a playbook by specifying an ipaddress for performing backups via the `backup_ipaddress` variable:
+ 
 `ansible-playbook linux-playbook.yaml --extra-vars "backup_ipaddress=<ip_address>"`  
 
-// Or without any ipaddress for performing backup as shown below: 
+ Or without any ipaddress for performing backup as shown below: 
+ 
 `ansible-playbook linux-playbook.yaml`
 
 ## Developed By: [Vettabase Ltd](vettabase.com)
