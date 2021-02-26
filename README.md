@@ -53,7 +53,7 @@ disk.
 ratio but needs to contain higher value than the 
 preceding kernel parameter.
 
-### iptable_rules Task
+### iptables Task
 
 If you have forgotten about IP tables rules in Linux,
 check [here](https://linux.die.net/man/8/iptables) in order to understand what the task inside the `iptables.yml`  does.  
