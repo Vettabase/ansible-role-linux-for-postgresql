@@ -39,15 +39,11 @@
  - name: allow incoming established postgresql connections  
    command: "iptables -A INPUT -p tcp -s {{ items.pg_ipaddress }}  --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT"
    with_items: 
-     - { pg_ipaddress: 127.0.0.1 } 
-     - { pg_ipaddress: 127.0.0.1 } 
-     - { pg_ipaddress: 127.0.0.1 }
-     - { pg_ipaddress: 127.0.0.1 } 
-     - { pg_ipaddress: 127.0.0.1 }
+     
    
  
  - name: allow outgoing established postgresql connections  
-   command: iptables -A OUTPUT -p tcp --sport 5432 -m conntrack ESTABLISHED -j ACCEPT 
+   command: iptables -A OUTPUT -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT 
    
  - name: allow postgres to specific network interface  
    command: iptables -A INPUT -i eth1 -p tcp --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT 
