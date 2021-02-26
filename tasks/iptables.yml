@@ -9,7 +9,7 @@
   command: iptables -A INPUT -i lo -j ACCEPT
   
  - name: accepts all traffic on your loopback interface
-   command: iptables -A INPUT -o lo -j ACCEPT 
+   command: iptables -A OUTPUT -o lo -j ACCEPT 
    
  - name: accepts established and related incoming connections 
    command: iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
