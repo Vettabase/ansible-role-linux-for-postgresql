@@ -1,2 +1,4 @@
--  include_tasks:  kernel-linux.yml
--  include_tasks:  iptables.yml  
+---
+tasks:
+-  include:  roles/linux-for-postgresql/tasks/kernel-linux.yml
+-  include:  roles/linux-for-postgresql/tasks/iptables.yml  
