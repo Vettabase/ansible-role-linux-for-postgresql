@@ -1,4 +1,4 @@
-## Optimizing Linux before installing Postgresql  
+## Optimizing Linux Servers for Postgres   
 
 ![Postgresql](https://www.bing.com/images/blob?bcid=RKbKXw6n7m8CRA)
 
