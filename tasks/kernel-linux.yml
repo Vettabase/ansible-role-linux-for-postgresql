@@ -49,6 +49,3 @@
     value: 20 
     state: present
 
-- name: Install Postgresql  
-  command: apt install postgresql postgresql-contrib libpq-dev python-psycopg2
-  when: ansible_os_family = "Debian" or ansible_os_family = "Ubuntu" 
