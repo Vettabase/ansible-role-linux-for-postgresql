@@ -1,3 +1,5 @@
 pg_address:  
   -  localhost 
   -  127.0.0.1   
+  
+remote_host: localhost
