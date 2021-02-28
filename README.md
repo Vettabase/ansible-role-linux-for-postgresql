@@ -2,7 +2,7 @@
 
 ![Postgresql](https://www.bing.com/images/blob?bcid=RKbKXw6n7m8CRA)  
 
-Supporting Servers: **Debian**   **Ubuntu**
+Supporting Servers: **Debian** /  **Ubuntu**
 
 There are two main tasks for the optimize_linux
 role namely:
