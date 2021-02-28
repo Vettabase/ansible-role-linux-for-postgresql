@@ -1,1 +1,26 @@
+ -  name: save iptable rules
+ 	  shell: iptables-save > IPtablesbackup.txt
+
+  -  name: generate checksum of file
+ 	   shell: sha1sum IPtablesbackup.txt > checksum
+ 	   delegate_to: "{{ remote_host }}"
+ 	   with_items: remote_host
+
+
+
+
+  -  name: check if the file exist
+ 	   stat:
+   	   path: "IPtablesbackup.txt"
+ 	   register: backup
+
+  -  name: report if file exist
+ 	   debug:
+   	   msg: "file exist"  
+ 	   when: backup.stat.exists  
+    
+  -  name: delete file if it exist  
+ 	   shell: rm IPtablesbackup.txt
+ 	   when: backup.stat.exists
+
 
