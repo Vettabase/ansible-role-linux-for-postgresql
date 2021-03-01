@@ -37,8 +37,8 @@
    command: iptables -A OUTPUT -p tcp --sport 873 -m conntrack --ctstate ESTABLSIHED -j ACCEPT 
    
  - name: allow incoming established postgresql connections  
-   command: "iptables -A INPUT -p tcp -s {{ items.pg_ipaddress }}  --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT"
-   with_items: 
+   command: "iptables -A INPUT -p tcp -s {{ pg_ipaddress }}  --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT"
+   with_items: pg_ipaddress
      
    
  
