@@ -51,8 +51,7 @@
  - name: allow outgoing traffic of established postgresql connection  
    command: iptables -A OUTPUT -o eth1 -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT
    
- - name: Then saves the current iptables rules 
-   command: iptables -L > iptablesrules.txt
+ 
    
  
   
