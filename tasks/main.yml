@@ -1,5 +1,8 @@
 ---
 tasks:
 -  include:  roles/linux-for-postgresql/tasks/kernel-linux.yml
--  include:  roles/linux-for-postgresql/tasks/iptables.yml  
+   tags: kernel-Linux
+-  include:  roles/linux-for-postgresql/tasks/iptables.yml
+   tags: iptables
 -  include:  roles/linux-for-postgresql/tasks/profile_iptable.yml
+   tags: profile-iptable
