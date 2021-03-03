@@ -113,4 +113,10 @@ Finally if you want to set up iptables without optimizing kernel parameters, use
 
 `ansible-playbook linux-playbook.yaml skip-tags "kernel-linux"`  
 
+### Compare hashes of current iptables rules
+
+You can run the script to compare the hashes of current iptables on internal server using the command below: 
+
+`python compare.py file1 file2`
+
 ## Developed By: [Vettabase Ltd](vettabase.com)
