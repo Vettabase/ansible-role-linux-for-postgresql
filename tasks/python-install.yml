@@ -2,7 +2,7 @@
   
 - name: install python version 3
   commmand: apt install -y python3-pip
-  delegate_to: "{{ remote_host }}"
+  
    
   
 - name: install development packages for python 
