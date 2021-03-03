@@ -80,6 +80,14 @@ installed, then the role installs it via the
 - Then saves current iptables rules to a text file named `iptablerules.txt`  
 
 You can delete the file `iptablerules.txt` after you have copied the file to a remote server.
+
+### profile_iptable task
+
+This task retrieves current iptables rules and compares it to the initial or original iptables rules.  
+
+### python-install task 
+
+This task installs python, development packages and other necessary modules on the server where files containing iptables rules are compared.
  
 ## How to Include the role in an ansible playbook
 
