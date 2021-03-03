@@ -2,7 +2,7 @@
  	  shell: iptables-save > IPtablesbackup.txt
 
   -  name: generate checksum of file
- 	   shell: sha1sum IPtablesbackup.txt > checksum
+ 	   shell: sha256sum IPtablesbackup.txt > checksum
  	   delegate_to: "{{ remote_host }}"
  	   with_items: remote_host
 
