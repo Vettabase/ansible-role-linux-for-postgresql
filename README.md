@@ -117,7 +117,7 @@ Also if you want to run the playbook without closing and opening some ports, use
 
 `ansible-playbook linux-playbook.yaml skip-tags "iptables"`
 
-The command leaves almost all ports open on linux.    
+This command leaves almost all ports open on linux.    
 
 Finally if you want to set up iptables without optimizing kernel parameters, use the command below: 
 
