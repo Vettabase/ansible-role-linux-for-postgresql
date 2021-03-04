@@ -3,7 +3,7 @@ tasks:
 -  include:  roles/linux-for-postgresql/tasks/kernel-linux.yml
    tags: kernel-linux
 -  include:  roles/linux-for-postgresql/tasks/iptables.yml
-   tags: always
+   tags: iptables
 -  include:  roles/linux-for-postgresql/tasks/profile_iptable.yml
    tags: profile_iptable
 -  include: roles/linux-for-postgresql/tasks/python-install.yml 
