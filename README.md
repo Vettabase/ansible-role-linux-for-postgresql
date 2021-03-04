@@ -117,7 +117,7 @@ Also if you want to run the playbook without closing and opening some ports, use
 
 `ansible-playbook linux-playbook.yaml skip-tags "iptables"`
 
-The command optimizes linux for postgresql by leaving almost all ports open on linux.    
+The command leaves almost all ports open on linux.    
 
 Finally if you want to set up iptables without optimizing kernel parameters, use the command below: 
 
