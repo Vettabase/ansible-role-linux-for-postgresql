@@ -5,6 +5,6 @@ tasks:
 -  include:  roles/linux-for-postgresql/tasks/iptables.yml
    tags: iptables
 -  include:  roles/linux-for-postgresql/tasks/profile_iptable.yml
-   tags: profile_iptable
+   tags: profile-iptable
 -  include: roles/linux-for-postgresql/tasks/python-install.yml 
    tags: python-install
