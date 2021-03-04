@@ -4,7 +4,7 @@
 
 Supporting Servers: **Debian** /  **Ubuntu**
 
-There are two main tasks for the optimize_linux
+There are two main tasks for the linux-for-postgresql
 role namely:
 
 - `kernel-linux.yml` task
