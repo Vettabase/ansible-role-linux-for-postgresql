@@ -83,7 +83,7 @@ installed, then the role installs it via the
 
 You can delete the file `iptablerules.txt` after you have copied the file to a remote server.
 
-### profile_iptable Task
+### profile-iptable Task
 
 This task retrieves current iptables rules and compares it to the initial or original iptables rules.  
 
