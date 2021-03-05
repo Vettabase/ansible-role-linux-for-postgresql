@@ -107,21 +107,21 @@ to run the playbook as shown below:
 
  You can run the role in a playbook by specifying an ipaddress for performing backups via the `backup_ipaddress` variable:
  
-`ansible-playbook linux-playbook.yaml --extra-vars "backup_ipaddress=<ip_address>"`  
+`ansible-playbook linux-for-postgresql.yaml --extra-vars "backup_ipaddress=<ip_address>"`  
 
  Or without any ipaddress for performing backup as shown below: 
  
-`ansible-playbook linux-playbook.yaml`  
+`ansible-playbook linux-for-postgresql.yaml`  
 
 Also if you want to run the playbook without closing and opening some ports, use the command below:  
 
-`ansible-playbook linux-playbook.yaml skip-tags "iptables"`
+`ansible-playbook linux-for-postgresql.yaml skip-tags "iptables"`
 
 This command leaves almost all ports open on linux.    
 
 Finally if you want to set up iptables without optimizing kernel parameters, use the command below: 
 
-`ansible-playbook linux-playbook.yaml skip-tags "kernel-linux"`  
+`ansible-playbook linux-for-postgresql.yaml skip-tags "kernel-linux"`  
 
 ### Compare hashes of current iptables rules
 
