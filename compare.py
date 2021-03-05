@@ -1,7 +1,5 @@
- 
-
+import os.path 
 import sys
-import os
 import hashlib
 
 
@@ -15,6 +13,7 @@ def comphash(file):
     sha256 = hashlib.sha256()
 
     with open(file, 'rb') as f:
+     
 
          while True:
 
