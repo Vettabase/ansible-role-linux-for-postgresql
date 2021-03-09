@@ -5,52 +5,85 @@
 - name: install iptables-persistent 
   command: apt install iptables-persistent   
   
-- name: accepts all traffic on your loopback interface 
-  command: iptables -A INPUT -i lo -j ACCEPT
-  
- - name: accepts all traffic on your loopback interface
-   command: iptables -A OUTPUT -o lo -j ACCEPT 
+
+- name: Allow related and established connections
+  ansible.builtin.iptables:
+    chain: INPUT
+    ctstate: ESTABLISHED,RELATED
+    jump: ACCEPT
+  become: yes
+
+
+
+- name: Allow new incoming SYN packets on TCP port 22 (SSH)
+  ansible.builtin.iptables:
+    chain: INPUT
+    protocol: tcp
+    destination_port: 22
+    ctstate: NEW
+    syn: match
+    jump: ACCEPT
+    comment: Accept new SSH connections    
+      
    
- - name: accepts established and related incoming connections 
-   command: iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT 
-   
- - name: accepts outgoing established connections  
-   command: iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT  
-   
- - name: allow traffic from internal interface to external interface 
-   command: iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT 
-   
- - name: drop invalid packets 
-   command: iptables -A INPUT -m conntrack --ctstate INVALID -j DROP   
-   
- - name: accept incoming connections from port 22 
-   command: iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT  
-   
- - name: allow otugoing established ssh connections 
-   command: iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT 
-   
- - name: allow rsync connection from specific ip address 
-   command: "iptables -A INPUT -p tcp -s {{ backup_ipaddress }} --dport 873 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT" 
-   when: backup_ipaddress is defined
-   
- - name: allow otugoing traffic rysnc connections
-   command: iptables -A OUTPUT -p tcp --sport 873 -m conntrack --ctstate ESTABLSIHED -j ACCEPT 
-   
- - name: allow incoming established postgresql connections  
-   command: "iptables -A INPUT -p tcp -s {{ pg_ipaddress }}  --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT"
-   with_items: pg_ipaddress
-     
-   
+      
  
- - name: allow outgoing established postgresql connections  
-   command: iptables -A OUTPUT -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT 
-   
- - name: allow postgres to specific network interface  
-   command: iptables -A INPUT -i eth1 -p tcp --dport 5432 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT 
-   
- - name: allow outgoing traffic of established postgresql connection  
-   command: iptables -A OUTPUT -o eth1 -p tcp --sport 5432 -m conntrack --ctstate ESTABLISHED -j ACCEPT
-   
+-  name: allow incoming packets on TCP port 873 (rsync)
+   ansible.builtin.iptables:
+     chain: INPUT 
+     protocol: tcp
+     destination_port: 873
+     ctstate: NEW
+     jump: ACCEPT
+     comment: accept rsync connections
+
+ - name: allow outgoing packets on tcp port 873 (rsync)
+   ansible.builtin.iptables:
+     chain: OUTPUT
+     protocol: tcp
+     destination_port: 873
+     ctstate: ESTABLISHED
+     jump: ACCEPT
+     comment: accept outgoing rsync connections
+
+ 
+ - name: Allow incoming packets on TCP port 22 (SCP)
+   ansible.builtin.iptables:
+   chain: INPUT
+   protocol: tcp
+   destination_port: 22
+   ctstate: NEW
+   jump: ACCEPT
+
+ - name: Allow outgoing packets on TCP port 22 (SCP)
+   ansible.builtin.iptables:
+     chain: OUTPUT
+     protocol: tcp
+     destination_port: 22
+     ctstate: ESTABLISHED
+     jump: ACCEPT
+ 
+ 
+  - name: allow incoming packets on tcp port 5432 (postgresql)
+    ansible.builtin.iptables:
+      chain: INPUT
+      protocol: tcp
+      destination_port: 5432
+      ctstate: NEW
+      jump: ACCEPT
+      comment: accept incoming connections on port 5432
+
+
+  - name: allow outgoing packets on tcp port 5432 (postgresql)
+    ansible.builtin.iptables:
+      chain: OUTPUT
+      protocol: tcp
+      destination_port: 5432
+      ctstate: ESTABLISHED
+      jump: ACCEPT
+      comment: accept outgoing connections on port 5432
+
+  
  
    
  
