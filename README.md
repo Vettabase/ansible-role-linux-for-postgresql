@@ -1,6 +1,6 @@
 ## Optimizing Linux Servers for Postgres   
 
-![Postgresql](https://www.bing.com/images/blob?bcid=RKbKXw6n7m8CRA)  
+![Postgresql](https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg)  
 
 Supporting Servers: **Debian** /  **Ubuntu**
 
